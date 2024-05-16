@@ -1,10 +1,13 @@
 package hello.hellospring.domain;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.*;
 
 /**
  * 同時性問題が考慮してありません。実務にはConcurrentHashMap, AtomicLong 使用を考慮する
  */
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
