@@ -21,10 +21,18 @@ public class MemberService {
      * 会員登録
      */
     public Long join(Member member) {
-        // 重複検査
-        validateDuplicateMember(member);
-        memberRepository.save(member);
-        return member.getId();
+        long start = System.currentTimeMillis();
+
+        try {
+            // 重複検査
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join " + timeMs + "ms");
+        }
     }
 
     private void validateDuplicateMember(Member member) {
@@ -38,7 +46,16 @@ public class MemberService {
      * 全体会員紹介
      */
     public List<Member> findMembers() {
-        return memberRepository.findAll();
+        long start = System.currentTimeMillis();
+
+        try {
+            return memberRepository.findAll();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("findMembers " + timeMs + "ms");
+        }
+
     }
 
     public Optional<Member> findOne(Long memberId) {
