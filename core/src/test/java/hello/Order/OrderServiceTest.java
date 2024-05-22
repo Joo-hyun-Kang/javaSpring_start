@@ -1,4 +1,23 @@
-import static org.junit.jupiter.api.Assertions.*;
+package hello.Order;
+
+import hello.member.Grade;
+import hello.member.Member;
+import hello.member.MemberService;
+import hello.member.MemberServiceImpl;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 class OrderServiceTest {
-  
+    MemberService memberService = new MemberServiceImpl();
+    OrderService orderService = new OrderServiceImpl();
+
+    @Test
+    void createOrder() {
+        long memberId = 1L;
+        Member member = new Member(memberId, "memberA", Grade.VIP);
+        memberService.join(member);
+
+        Order order = orderService.createOrder(memberId, "itemA", 10000);
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+    }
 }
