@@ -1,8 +1,11 @@
 package hello.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository {
     /*
     * 同時性問題は考慮せずに実装する。
