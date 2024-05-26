@@ -1,6 +1,6 @@
 # Springコンテイナー
 1. [オブジェクト指向プログラミング](https://github.com/Joo-hyun-Kang/javaSpring_start/wiki/%EF%BC%91%E3%80%82%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)
-2. [Springの核心原理の理解１ー例題作り](https://github.com/Joo-hyun-Kang/javaSpring_start/wiki/%EF%BC%91%E3%80%82%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)
+2. [Springの核心原理の理解１ー例題作り](https://github.com/Joo-hyun-Kang/javaSpring_start/wiki/%EF%BC%92%E3%80%82Spring%E3%81%AE%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E3%81%AE%E7%90%86%E8%A7%A31-%E3%83%BC-%E4%BE%8B%E9%A1%8C%E4%BD%9C%E3%82%8A)
 
 
 # Springの入門
