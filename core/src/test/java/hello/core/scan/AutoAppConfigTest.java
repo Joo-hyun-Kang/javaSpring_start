@@ -1,8 +1,7 @@
 package hello.core.scan;
 
-import hello.Order.OrderService;
+import hello.order.OrderService;
 import hello.core.AutoAppConfig;
-import hello.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

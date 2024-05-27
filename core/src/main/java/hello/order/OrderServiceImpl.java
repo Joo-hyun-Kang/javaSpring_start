@@ -1,11 +1,8 @@
-package hello.Order;
+package hello.order;
 
 import hello.discount.DiscountPolicy;
-import hello.discount.FixDiscountPolicy;
-import hello.discount.RateDiscountPolicy;
 import hello.member.Member;
 import hello.member.MemberRepository;
-import hello.member.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
