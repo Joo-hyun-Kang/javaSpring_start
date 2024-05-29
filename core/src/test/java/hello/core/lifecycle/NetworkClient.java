@@ -1,7 +1,10 @@
 package hello.core.lifecycle;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 //架空のネットワーク接続仮定する
-public class NetworkClient {
+public class NetworkClient implements InitializingBean, DisposableBean {
     private String url;
 
     public NetworkClient() {
@@ -26,5 +29,16 @@ public class NetworkClient {
     //サービスが終了し呼ばれる
     public void disconnect() {
         System.out.println("close " + url);
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        connect();
+        call("初期化接続メッセージ");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        disconnect();
     }
 }
