@@ -1,7 +1,7 @@
 package hello.core.lifecycle;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 //架空のネットワーク接続仮定する
 public class NetworkClient {
@@ -9,8 +9,6 @@ public class NetworkClient {
 
     public NetworkClient() {
         System.out.println("コンストラクターを呼び出す, url = " + url);
-        connect();
-        call("初期化接続メッセージ");
     }
 
     public void setUrl(String url) {
@@ -31,12 +29,14 @@ public class NetworkClient {
         System.out.println("close " + url);
     }
 
-    public void init() throws Exception {
+    @PostConstruct
+    public void init() {
         System.out.println("NetworkClient.init");
         connect();
-        call("初期化接続メッセージ");
+        call("初期化メッセージ");
     }
 
+    @PreDestroy
     public void close() throws Exception {
         System.out.println("NetworkClient.close");
         disconnect();
