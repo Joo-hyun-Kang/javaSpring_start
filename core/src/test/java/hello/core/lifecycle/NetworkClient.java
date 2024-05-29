@@ -4,7 +4,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 //架空のネットワーク接続仮定する
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
     private String url;
 
     public NetworkClient() {
@@ -31,14 +31,14 @@ public class NetworkClient implements InitializingBean, DisposableBean {
         System.out.println("close " + url);
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
+    public void init() throws Exception {
+        System.out.println("NetworkClient.init");
         connect();
         call("初期化接続メッセージ");
     }
 
-    @Override
-    public void destroy() throws Exception {
+    public void close() throws Exception {
+        System.out.println("NetworkClient.close");
         disconnect();
     }
 }
